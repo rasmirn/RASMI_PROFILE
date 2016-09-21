@@ -3,6 +3,16 @@
       line-height: 1.8;
       color: #818181;
   }
+  .loadingImage {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(C:/Users/Rasmi.Nayak/Desktop/Profile/imgaes/simple-pre-loader/simple-pre-loader/images/loader-128x/Preloader_2.gif) center no-repeat #fff;
+}
+   
   h2 {
       font-size: 24px;
       text-transform: uppercase;
@@ -119,7 +129,17 @@
   .navbar li a, .navbar .navbar-brand {
       color: #fff !important;
   }
-  
+  nav.navbar{
+ 
+   -webkit-transition: all 0.4s ease;
+   transition: all 0.4s ease;
+}
+.navbar{
+   position: fixed;
+   top: 0;
+   z-index:10;
+   -webkit-transition: all .6s ease-in-out;
+}
   .navbar-nav li a:hover, .navbar-nav li.active a {
       color: #f4511e !important;
       background-color: #fff !important;
@@ -133,6 +153,19 @@
       margin-bottom: 20px;
       color: #f4511e;
   }
+  .scroll-top {
+   position:fixed;
+   bottom:0;
+   right:2%;
+   z-index:100;
+   background: #ffcc33;
+   font-size:24px;
+   border-top-left-radius:3px;
+   border-top-right-radius:3px;
+}
+.scroll-top a:link,.scroll-top a:visited {
+  color:#222;
+} 
   .slideanim {visibility:hidden;}
   .slide {
       animation-name: slide;

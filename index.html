@@ -13,9 +13,11 @@
   <link href="C:\Users\Rasmi.Nayak\Desktop\Profile\css\rasmi.css" rel="stylesheet" type="text/css">
 	
 </head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<nav class="navbar navbar-default navbar-fixed-top">
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" ' >
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -45,7 +47,7 @@
 </nav>
 
 <!-- ABOUT ME -->
-<div class="jumbotron text-center">
+<!--div class="jumbotron text-center">
 	<div id="rasmiCarousel" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 		  <li data-target="#rasmiCarousel" data-slide-to="0" class="active"></li>
@@ -53,7 +55,7 @@
 		  <li data-target="#rasmiCarousel" data-slide-to="2"></li>
 		  
 		</ol>
-		    <!-- Wrapper for slides -->
+		  
 		<div class="carousel-inner" role="listbox">
 
 		  <div class="item active">
@@ -84,10 +86,10 @@
 		</div>
 		<!-- <img src="C:\Users\Rasmi.Nayak\Desktop\Profile\imgaes\me4.jpg" class="img-rounded" width="100" height="100">
 		<p>RASMI RANJAN NAYAK</p>
-		<h4>Perl/Java Developer</h4>	 -->
+		<h4>Perl/Java Developer</h4>	
 	</div>
 	
-</div>
+</div-->
 
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
@@ -280,14 +282,33 @@ marker.setMap(map);
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
-<footer class="container-fluid text-center">
-  <a href="#myPage" title="To Top">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a>  		
-</footer>
+
 
 <script>
+
+$(window).load(function(){
+$(".loadingImage").fadeOut(3000);
+
+});
+
+
 $(document).ready(function(){
+	//	$(".loadingImage").fadeOut(1000);
+	//$("#myPage").css("display","block");	
+	$('#navbar').affix({
+		  offset: {
+			top: $('header').height()-$('#nav').height()
+		  }
+	});
+  var poss=0;
+  $(window).scroll(function() {
+	  if ($(document).scrollTop() > poss) {
+		$('nav').slideUp("slow");
+	  }else{
+		$('nav').show("slow");
+	  }
+	  poss=$(document).scrollTop();
+  });
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
 
@@ -320,6 +341,42 @@ $(document).ready(function(){
   });
 })
 </script>
+<div class="container">    
+<div class="row">
+
+			<div class="col-md-4" >
+				<ul class="unstyled">
+					<li>GitHub<li>
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Contact & support</a></li>
+					<li><a href="#">Enterprise</a></li>
+					<li><a href="#">Site status</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4 pull-right">
+				<ul class="unstyled">
+					<li>Applications<li>
+					<li><a href="#">Product for Mac</a></li>
+					<li><a href="#">Product for Windows</a></li>
+					<li><a href="#">Product for Eclipse</a></li>
+					<li><a href="#">Product mobile apps</a></li>							
+				</ul>
+			</div>
+</div>	
+</div>
+		
+<div id="footer">
+  <div class="container nav navbar-fixed-bottom">
+    <p class="text-muted">Rasmi Ranjan Nayak&nbsp;&nbsp;</p>
+  </div>
+</div>
+
+<ul class="nav pull-right scroll-top">
+  <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+</ul>
 
 </body>
+<div class="loadingImage"></div>
+
 </html>
